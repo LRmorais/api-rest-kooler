@@ -20,6 +20,10 @@ class User extends Model {
             },
         })
     }
+// associação 1 para muitos -> 1 user pode ter varios sensors
+    static associate(models) {
+        this.hasMany(models.Sensors, { foreignKey: 'user_id', as: 'sensors' });
+    }
 }
     
 module.exports = User;
