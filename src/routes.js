@@ -4,6 +4,8 @@ const UserController = require('./controllers/UserController');
 
 const SensorsController = require('./controllers/SensorsController');
 
+const DataController = require('./controllers/DataController');
+
 const authMiddleware = require('./middlewares/auth');
 
 const router = express.Router();
@@ -24,6 +26,9 @@ router.get('/users/:user_id/sensors', SensorsController.index);
 router.post('/users/:user_id/sensors', SensorsController.store);
 router.delete('/users/:id/sensors', SensorsController.delete);
 router.put('/users/:id/sensors', SensorsController.update);
+
+router.get('/users/:sensors_id/data', DataController.index);
+router.post('/users/:sensors_id/data', DataController.store);
 
 
 
