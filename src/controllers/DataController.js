@@ -1,6 +1,7 @@
 const Datas = require('../models/Datas');
 const Sensors = require('../models/Sensors');
 
+
 module.exports = {
     async index(req, res) {
         const { sensors_id } = req.params;

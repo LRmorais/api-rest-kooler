@@ -6,7 +6,9 @@ module.exports = {
         const { user_id } = req.params;
 
         const user = await User.findByPk(user_id, {
-            include: { association: 'sensors'}
+            include: [
+                { association: 'sensors'},
+            ]
         });
 
         if (!user) {
@@ -24,7 +26,7 @@ module.exports = {
       try {
 
           const { user_id } = req.params;
-          const { street, number, district, city } = req.body;
+          const { apelido, ident } = req.body;
 
           const user = await User.findByPk(user_id);
 
@@ -36,10 +38,8 @@ module.exports = {
           }
 
           const sensors = await Sensors.create({
-            street,
-            number,
-            district,
-            city,
+            apelido,
+            ident,
             user_id,
           });
 

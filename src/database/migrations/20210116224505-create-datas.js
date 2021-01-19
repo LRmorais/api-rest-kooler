@@ -17,11 +17,11 @@ module.exports = {
         onDelete: 'CASCADE',
       },
       lat: {
-        type: Sequelize.STRING,
+        type: Sequelize.FLOAT,
         allowNull: true,
       },
       lng: {
-        type: Sequelize.STRING,
+        type: Sequelize.FLOAT,
         allowNull: false,
       },
       temp: {

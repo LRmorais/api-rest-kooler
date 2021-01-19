@@ -16,19 +16,11 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      street: {
+      apelido: {
         type: Sequelize.STRING,
         allowNull: true,
       },
-      number: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      district: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      city: {
+      ident: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -44,6 +36,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('addresses');
+    return queryInterface.dropTable('sensors');
   }
 };

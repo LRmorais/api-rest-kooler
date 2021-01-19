@@ -3,10 +3,9 @@ const { Model, DataTypes } = require('sequelize');
 class Sensors extends Model {
     static init(sequelize) {
         super.init({
-            street: DataTypes.STRING,
-            number: DataTypes.STRING,
-            district: DataTypes.STRING,
-            city: DataTypes.STRING,
+            apelido: DataTypes.STRING,
+            ident: DataTypes.STRING,
+            
         }, {
             sequelize
         })
