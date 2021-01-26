@@ -5,8 +5,12 @@ const UserController = require('./controllers/UserController');
 const SensorsController = require('./controllers/SensorsController');
 
 const DataController = require('./controllers/DataController');
-
+// middleware que faz a verificação da autenticidade do usuario
 const authMiddleware = require('./middlewares/auth');
+// é um middleware que intermediara o envio de arquivos ao bd
+const multer = require('multer');
+// configutações do multer
+const multerConfig = require("./config/multer");
 
 const router = express.Router();
 
@@ -35,7 +39,11 @@ router.put('/users/:id/sensors', SensorsController.update);
 router.get('/users/:sensors_id/data', DataController.index);
 router.post('/users/:sensors_id/data', DataController.store);
 
+router.post("/posts", multer(multerConfig).single('file'), (req,res)=>{
+    console.log(req.file);
 
+    return res.json({Hello: "Rocket"});
+});
 
 module.exports = router;
 
