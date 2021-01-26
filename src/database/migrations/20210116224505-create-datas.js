@@ -16,17 +16,21 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      lat: {
-        type: Sequelize.FLOAT,
+      name: {
+        type: Sequelize.STRING,
         allowNull: true,
       },
-      lng: {
-        type: Sequelize.FLOAT,
-        allowNull: false,
+      size: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
       },
-      temp: {
+      key: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
+      },
+      url: {
+        type: Sequelize.STRING,
+        allowNull: true,
       },
       created_at: {
         type: Sequelize.DATE,

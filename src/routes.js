@@ -37,7 +37,7 @@ router.delete('/users/:id/sensors', SensorsController.delete);
 router.put('/users/:id/sensors', SensorsController.update);
 
 router.get('/users/:sensors_id/data', DataController.index);
-router.post('/users/:sensors_id/data', DataController.store);
+router.post('/users/:sensors_id/data',multer(multerConfig).single('file'), DataController.store);
 
 router.post("/posts", multer(multerConfig).single('file'), (req,res)=>{
     console.log(req.file);

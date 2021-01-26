@@ -3,9 +3,10 @@ const { Model, DataTypes } = require('sequelize');
 class Datas extends Model {
     static init(sequelize) {
         super.init({
-            lat: DataTypes.STRING,
-            lng: DataTypes.STRING,
-            temp: DataTypes.STRING,
+            name: DataTypes.STRING,
+            size: DataTypes.INTEGER,
+            key: DataTypes.STRING,
+            url: DataTypes.STRING,
         }, {
             sequelize
         })

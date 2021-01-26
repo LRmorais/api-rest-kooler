@@ -25,8 +25,8 @@ module.exports = {
       try {
 
           const { sensors_id } = req.params;
-          const { lat, lng, temp } = req.body;
-
+          //const { lat, lng, temp } = req.body;
+        
           const sensor = await Sensors.findByPk(sensors_id);
 
           if (!sensor) {
@@ -37,9 +37,10 @@ module.exports = {
           }
 
           const datas = await Datas.create({
-            lat,
-            lng,
-            temp,
+            name: req.file.originalname,
+            size: req.file.size,
+            key: req.file.filename,
+            url: '',
             sensors_id,
           });
 
