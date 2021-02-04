@@ -34,7 +34,7 @@ router.put('/users/:id/sensors', SensorsController.update);
 
 router.get('/users/:sensors_id/data', DataController.index);
 router.post('/users/:sensors_id/data', DataController.store);
-
+router.post('/users/:sensors_id/datas', DataController.storeBulk);
 
 
 module.exports = router;

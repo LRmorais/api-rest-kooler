@@ -53,4 +53,31 @@ module.exports = {
           return res.status(400).json({ error: err });
       }
     },
+    async storeBulk(req, res) {
+
+        try {
+  
+            const { sensors_id } = req.params;
+            const { log } = req.body;
+            console.log(log)
+            const sensor = await Sensors.findByPk(sensors_id);
+  
+            if (!sensor) {
+                return res.status(400).json({
+                    status: 0,
+                    message: 'Usuário não encontrado!'
+                });
+            }
+            const logs = await Datas.bulkCreate(log)
+  
+            return res.status(200).json({
+                status: 1,
+                message: "dados cadastrado com sucesso!",
+                logs
+            });
+  
+          } catch (err) {
+            return res.status(400).json({ error: err });
+        }
+      },
 };
