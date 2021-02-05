@@ -17,7 +17,7 @@ module.exports = {
             });
         }
 
-        return res.status(200).send(sensor.data);
+        return res.status(200).send(sensor);
     },
 
     async store(req, res) {
