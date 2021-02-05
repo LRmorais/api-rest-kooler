@@ -26,7 +26,7 @@ module.exports = {
       try {
 
           const { user_id } = req.params;
-          const { apelido, ident } = req.body;
+          const { apelido} = req.body;
 
           const user = await User.findByPk(user_id);
 
@@ -39,7 +39,6 @@ module.exports = {
 
           const sensors = await Sensors.create({
             apelido,
-            ident,
             user_id,
           });
 

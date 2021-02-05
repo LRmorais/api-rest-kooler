@@ -4,7 +4,6 @@ class Sensors extends Model {
     static init(sequelize) {
         super.init({
             apelido: DataTypes.STRING,
-            ident: DataTypes.STRING,
             
         }, {
             sequelize

@@ -18,14 +18,14 @@ router.post('/users/login', UserController.login);
 // rota de POST dos dados de um usuario, controle definido em UserController
 router.post('/users', UserController.store);
 
-//router.use(authMiddleware);
+
 
 // rota de update do usuario com o ID correspondente
 router.put('/users/:user_id',UserController.update);
 // rota de delete do usuario com ID correspondente
 router.delete('/users/:user_id',UserController.delete);
 
-
+router.use(authMiddleware);
 
 router.get('/users/:user_id/sensors', SensorsController.index);
 router.post('/users/:user_id/sensors', SensorsController.store);

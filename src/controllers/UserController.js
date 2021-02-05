@@ -82,12 +82,12 @@ module.exports = {
 // metodo create do sequelize para inserir dados
         const user = await User.create({ name, password, email });
 
-        const token = generateToken({ id: user.id });
+        //const token = generateToken({ id: user.id });
 
         return res.status(200).send({
             status: 1,
             message: 'usuário cadastrado com sucesso!',
-            user, token
+            user
 
         });
 

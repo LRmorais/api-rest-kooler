@@ -3,9 +3,9 @@ const { Model, DataTypes } = require('sequelize');
 class Datas extends Model {
     static init(sequelize) {
         super.init({
-            lat: DataTypes.STRING,
-            lng: DataTypes.STRING,
-            temp: DataTypes.STRING,
+            lat: DataTypes.FLOAT,
+            lng: DataTypes.FLOAT,
+            temp: DataTypes.FLOAT,
         }, {
             sequelize
         })
