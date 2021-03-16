@@ -25,7 +25,9 @@ module.exports = {
       try {
 
           const { sensors_id } = req.params;
-          const { lat, lng, temp } = req.body;
+          //const { lat, lng, temp } = req.body;
+          const {log} = req.body;
+          console.log(log)
 
           const sensor = await Sensors.findByPk(sensors_id);
 

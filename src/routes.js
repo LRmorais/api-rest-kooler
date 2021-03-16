@@ -25,6 +25,9 @@ router.put('/users/:user_id',UserController.update);
 // rota de delete do usuario com ID correspondente
 router.delete('/users/:user_id',UserController.delete);
 
+router.post('/users/:sensors_id/data', DataController.store);
+router.post('/users/:sensors_id/datas', DataController.storeBulk);
+
 router.use(authMiddleware);
 
 router.get('/users/:user_id/sensors', SensorsController.index);
@@ -33,8 +36,7 @@ router.delete('/users/:id/sensors', SensorsController.delete);
 router.put('/users/:id/sensors', SensorsController.update);
 
 router.get('/users/:sensors_id/data', DataController.index);
-router.post('/users/:sensors_id/data', DataController.store);
-router.post('/users/:sensors_id/datas', DataController.storeBulk);
+
 
 
 module.exports = router;
